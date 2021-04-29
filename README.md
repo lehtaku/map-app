@@ -14,3 +14,7 @@
 ### Running app
 
 ``npx react-native run-ios``
+
+**Notice**
+
+After first start up, app is asking for pemission to use the device location. You can't see your own location before selecting "Allow while using app", and reload the app with CMD + R.
