@@ -1,20 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
 
 import MapboxGL from '@react-native-mapbox-gl/maps';
+import Geolocation from '@react-native-community/geolocation';
 
 MapboxGL.setAccessToken(
   'pk.eyJ1IjoibGVodGFrdSIsImEiOiJja25wMmtkZXkwMHZtMnZxd21kem9tMWJsIn0.5eHI-J9zArIPfZ6s6Rpu8g',
 );
 
 const App = () => {
+  // Show user current location
+  useEffect(() => {
+    Geolocation.getCurrentPosition(info => console.log(info));
+  }, []);
+
   return (
     <View style={styles.page}>
       <View style={styles.container}>
         <MapboxGL.MapView style={styles.map}>
-          <MapboxGL.MarkerView id="btn-1" coordinate={[62.877762, 24.80093]}>
-            <MapboxGL.UserLocation />
-          </MapboxGL.MarkerView>
+          <MapboxGL.UserLocation />
         </MapboxGL.MapView>
       </View>
     </View>
