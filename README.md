@@ -2,7 +2,7 @@
 
 ### Prerequisites
 
-1. Install node and watchman. 
+1. Install node and watchman.   
 ``brew install node && brew install watchman``
 
 2. Install CocoaPods.  
